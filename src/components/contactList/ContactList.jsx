@@ -12,7 +12,8 @@ const ContactList = ({ contacts, filter, deleteContactBtn }) => {
       <li className={styles.listItem} key={contact.id}>
         <button
           className={styles.removeContactBtn}
-          onClick={deleteContactBtn}
+          // onClick={deleteContactBtn}
+          onClick={() => deleteContactBtn(contact.id)}
           id={contact.id}
         >
           Delete
@@ -35,7 +36,7 @@ const ContactList = ({ contacts, filter, deleteContactBtn }) => {
 export default ContactList;
 
 ContactList.propTypes = {
-  contacts: PropTypes.array.isRequired,
+  contacts: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   filter: PropTypes.string,
   deleteContactBtn: PropTypes.func.isRequired,
 };
