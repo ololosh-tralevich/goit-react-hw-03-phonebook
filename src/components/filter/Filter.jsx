@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 
-const Filter = ({ typeContactData }) => {
+const Filter = ({ typeContactData, filter }) => {
   return (
     <>
       <h4>Find contacts by name</h4>
       <input
+        value={filter}
         type="text"
         name="filter"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -18,6 +19,11 @@ const Filter = ({ typeContactData }) => {
 
 export default Filter;
 
+Filter.defaultProps = {
+  filter: '',
+}
+
 Filter.propTypes = {
   typeContactData: PropTypes.func.isRequired,
+  filter: PropTypes.string,
 };

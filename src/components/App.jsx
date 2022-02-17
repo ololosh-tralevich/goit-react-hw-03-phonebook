@@ -59,7 +59,7 @@ export class App extends Component {
 
         <div className={styles.listContainer}>
           <h2>Contacts</h2>
-          <Filter typeContactData={this.typeContactData} />
+          <Filter typeContactData={this.typeContactData} filter={this.state.filter} />
           <ContactList
             deleteContactBtn={this.deleteContactBtn}
             contacts={this.state.contacts}
