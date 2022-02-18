@@ -17,11 +17,12 @@ export class App extends Component {
     const localContacts = JSON.parse(localStorage.getItem('contacts'));
 
     if (
-      localContacts.length &&
+      localContacts?.length &&
       this.state.contacts.length !== localContacts.length
     ) {
       this.setState({ contacts: localContacts });
     }
+    return
   }
 
   componentDidUpdate(prevProps, prevState) {
